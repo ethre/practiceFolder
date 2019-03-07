@@ -16,13 +16,13 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
 
 	private boolean play = false;
 	int score = 0;
-	int fruit = 0;
+	int fruitScore = 1;
 	
 	private Timer timer;
 	private int delay = 8;
 	
-	int snakeXpos = 150;
-	int snakeYpos = 150;
+	int snakeXpos = 300;
+	int snakeYpos = 300;
 	int fruitXpos = 100;
 	int fruitYpos = 100;
 	
@@ -40,17 +40,17 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
 	public void paint(Graphics g) {
 	//background
 	g.setColor(Color.black);
-	g.fillRect(1,1,692,592);
+	g.fillRect(1,1,800,800);
 	
 	//drawing map
 	map.draw((Graphics2D)g);
 	
 	//borders
 	g.setColor(Color.red);
-	g.fillRect(0,0,3,592);
-	g.fillRect(691,0,3,592);
-	g.fillRect(0,0,692,3);
-	g.fillRect(0,568,692,3);
+	g.fillRect(0,0,3,800);		// left
+	g.fillRect(790,0,3,800);
+	g.fillRect(0,0,800,3);
+	g.fillRect(0,768,800,3);	//bottom
 	
 	//scores
 	g.setColor(Color.white);
@@ -60,55 +60,61 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
 	//snake
 	g.setColor(Color.yellow);
 	g.fillRect(snakeXpos, snakeYpos, 20, 20);
+	
 	}
 	
 	
 	public void moveUp() {
 	play = true;
-	snakeYpos-=20;
+	snakeYpos-=1;
 	}
 	
 	public void moveDown() {
 	play = true;
-	snakeYpos+=20;
+	snakeYpos+=1;
 	}
 	
 	public void moveLeft() {
 	play = true;
-	snakeXpos-=20;
+	snakeXpos-=1;
 	}
 	
 	public void moveRight() {
 	play = true;
-	snakeXpos+=20;
+	snakeXpos+=1;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		timer.start();
+		if(play) {
+			
+			
+			repaint();
+		}
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 	if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-		if(snakeXpos>=660) {
-			snakeXpos=660;
+		if(snakeXpos>=770) {
+			snakeXpos=770;
 				}else {
 				moveRight();
 			}
 		}
 	
 	if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-		if(snakeXpos<=9) {
-			snakeXpos=9;
+		if(snakeXpos<=10) {
+			snakeXpos=10;
 				}else {
 				moveLeft();
 			}
 		}
 	
 	if(e.getKeyCode() == KeyEvent.VK_UP) {
-		if(snakeYpos<=10) {
-			snakeYpos=10;
+		if(snakeYpos<=0) {
+			snakeYpos=0;
 			}else {
 			moveUp();
 		}
@@ -121,7 +127,6 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
 			moveDown();
 		}
 	}
-	
 		repaint();
 	}
 	

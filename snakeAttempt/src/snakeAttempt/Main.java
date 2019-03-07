@@ -7,7 +7,7 @@ public class Main {
 		
 		JFrame obj = new JFrame();
 		Gameplay gamePlay = new Gameplay();
-		obj.setBounds(10,10,700,600);
+		obj.setBounds(10,10,800,800);
 		obj.setTitle("S-S-Ssnake");
 		obj.setResizable(false);
 		obj.setVisible(true);
