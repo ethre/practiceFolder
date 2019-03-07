@@ -65,12 +65,12 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
 	
 	public void moveUp() {
 	play = true;
-	snakeYpos+=20;
+	snakeYpos-=20;
 	}
 	
 	public void moveDown() {
 	play = true;
-	snakeYpos-=20;
+	snakeYpos+=20;
 	}
 	
 	public void moveLeft() {
@@ -91,20 +91,36 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 	if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-		if(snakeXpos>=600) {
-			snakeXpos=600;
+		if(snakeXpos>=660) {
+			snakeXpos=660;
 				}else {
 				moveRight();
 			}
 		}
 	
 	if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-		if(snakeXpos>=10) {
-			snakeXpos=10;
+		if(snakeXpos<=9) {
+			snakeXpos=9;
 				}else {
 				moveLeft();
 			}
 		}
+	
+	if(e.getKeyCode() == KeyEvent.VK_UP) {
+		if(snakeYpos<=10) {
+			snakeYpos=10;
+			}else {
+			moveUp();
+		}
+	}
+	
+	if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+		if(snakeYpos<=10) {
+			snakeYpos=10;
+			}else {
+			moveDown();
+		}
+	}
 	
 		repaint();
 	}
