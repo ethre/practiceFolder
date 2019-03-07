@@ -84,6 +84,7 @@ public class Board extends JPanel implements ActionListener{
 	timer.start();	
 	}
 	
+	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		doDrawing(g);
@@ -175,7 +176,7 @@ public class Board extends JPanel implements ActionListener{
 		apple_y=((r*DOT_SIZE));
 	}
 	
-
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(inGame) {
 			checkApple();
@@ -187,7 +188,7 @@ public class Board extends JPanel implements ActionListener{
 	
 	private class TAdapter extends KeyAdapter{
 		
-
+	@Override
 	public void keyPressed(KeyEvent e) {
 	
 	int key = e.getKeyCode();
