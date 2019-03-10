@@ -80,11 +80,9 @@ public class Week1 {
 	public static void printRectangle(int width, int height) {
 		int i=0;
 		while(i<height) {
-			
 			printStars(width);
 			System.out.println(" ");
 			i++;
-			
 		}
 	}
 	
