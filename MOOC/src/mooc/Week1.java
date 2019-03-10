@@ -55,9 +55,10 @@ public class Week1 {
 	}
 	*/
 	
-	printStars(5);
+	printTriangle(5);
 	
 	}
+	
 	
 	public static void printStars(int amount) {
 		int i=0;
@@ -66,5 +67,31 @@ public class Week1 {
 			i++;
 		}
 	}
+
+	public static void printSquare(int sideSize) {
+		int i=0;
+		while(i<sideSize) {
+			System.out.println(" ");
+			printStars(sideSize);
+			i++;
+		}
+	}	
+		
+	public static void printRectangle(int width, int height) {
+		int i=0;
+		while(i<height) {
+			
+			printStars(width);
+			System.out.println(" ");
+			i++;
+			
+		}
+	}
 	
+	public static void printTriangle(int size) {
+		for(int i=0; i<size;i++) {
+			printStars(i);
+			System.out.println(" ");
+		}
+	}
 }
