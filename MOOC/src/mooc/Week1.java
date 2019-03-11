@@ -55,11 +55,10 @@ public class Week1 {
 	}
 	*/
 	
-	printTriangle(5);
 	
 	}
 	
-	
+	/*
 	public static void printStars(int amount) {
 		int i=0;
 		while(i<amount) {
@@ -92,4 +91,41 @@ public class Week1 {
 			System.out.println(" ");
 		}
 	}
+	
+	public static void printWhitespaces(int size) {
+		int i=0;
+		while(i<size) {
+			System.out.print(" ");
+			i++;
+		}	
+	}
+	
+	public static void printTriangleTwo(int size) {
+		for(int i=0; i<size; i++) {
+			printWhitespaces(size-i);
+			printStars(i);
+			System.out.println(" ");
+		}
+	}
+	
+	public static void xmasTree(int height) {
+		for(int i=0; i<height; i++) {
+			printWhitespaces(height-i);
+			if(i==1){
+				printStars(i+2);
+				System.out.println("");
+			}else {
+				printStars(i+2);
+				System.out.println("");
+				
+			}	
+		}
+	}
+	*/
+	
+	
+	
 }
+
+
+
