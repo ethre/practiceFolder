@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Week1 {
 
 	public static void main(String[] args) {
+
 	/*
 	Scanner scanner = new Scanner(System.in);
 	
@@ -55,10 +56,9 @@ public class Week1 {
 	}
 	*/
 	
-	
+	xmasTree(20);
 	}
 	
-	/*
 	public static void printStars(int amount) {
 		int i=0;
 		while(i<amount) {
@@ -66,7 +66,7 @@ public class Week1 {
 			i++;
 		}
 	}
-
+	/*
 	public static void printSquare(int sideSize) {
 		int i=0;
 		while(i<sideSize) {
@@ -91,6 +91,7 @@ public class Week1 {
 			System.out.println(" ");
 		}
 	}
+*/
 	
 	public static void printWhitespaces(int size) {
 		int i=0;
@@ -99,7 +100,7 @@ public class Week1 {
 			i++;
 		}	
 	}
-	
+/*
 	public static void printTriangleTwo(int size) {
 		for(int i=0; i<size; i++) {
 			printWhitespaces(size-i);
@@ -107,24 +108,15 @@ public class Week1 {
 			System.out.println(" ");
 		}
 	}
-	
+*/
 	public static void xmasTree(int height) {
 		for(int i=0; i<height; i++) {
-			printWhitespaces(height-i);
-			if(i==1){
-				printStars(i+2);
-				System.out.println("");
-			}else {
-				printStars(i+2);
-				System.out.println("");
-				
-			}	
+		printWhitespaces(height-i);
+		printStars(2*i+1);
+		System.out.println(" ");
+
 		}
 	}
-	*/
-	
-	
-	
 }
 
 
